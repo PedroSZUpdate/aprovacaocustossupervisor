@@ -8,6 +8,7 @@ from screen_status import ScreenStatus
 
 
 class App(tk.Tk):
+
     update_app()
 
     def __init__(self, screen_name="Aprovação de Custos"):
