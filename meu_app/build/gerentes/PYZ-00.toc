@@ -1,5 +1,6 @@
 ('C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
- 'Indicadores\\Projetos Python\\App Custo\\build\\gerentes\\PYZ-00.pyz',
+ 'Indicadores\\Projetos Python\\App Custo - '
+ 'Gerente\\build\\gerentes\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
    'Indicadores\\Projetos Python\\App '
@@ -519,19 +520,19 @@
    'PYMODULE'),
   ('aux_custom_classes',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
-   'Indicadores\\Projetos Python\\App Custo\\aux_custom_classes.py',
+   'Indicadores\\Projetos Python\\App Custo - Gerente\\aux_custom_classes.py',
    'PYMODULE'),
   ('aux_functions_df',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
-   'Indicadores\\Projetos Python\\App Custo\\aux_functions_df.py',
+   'Indicadores\\Projetos Python\\App Custo - Gerente\\aux_functions_df.py',
    'PYMODULE'),
   ('aux_sap',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
-   'Indicadores\\Projetos Python\\App Custo\\aux_sap.py',
+   'Indicadores\\Projetos Python\\App Custo - Gerente\\aux_sap.py',
    'PYMODULE'),
   ('aux_send_email',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
-   'Indicadores\\Projetos Python\\App Custo\\aux_send_email.py',
+   'Indicadores\\Projetos Python\\App Custo - Gerente\\aux_send_email.py',
    'PYMODULE'),
   ('backports',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
@@ -5465,11 +5466,12 @@
    'PYMODULE'),
   ('screen_gerentes',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
-   'Indicadores\\Projetos Python\\App Custo\\screen_gerentes.py',
+   'Indicadores\\Projetos Python\\App Custo - Gerente\\screen_gerentes.py',
    'PYMODULE'),
   ('screen_gerentes_mov_saldo',
    'C:\\Users\\williamyamashita.gff\\OneDrive - Suzano S A\\Dados '
-   'Indicadores\\Projetos Python\\App Custo\\screen_gerentes_mov_saldo.py',
+   'Indicadores\\Projetos Python\\App Custo - '
+   'Gerente\\screen_gerentes_mov_saldo.py',
    'PYMODULE'),
   ('secrets',
    'C:\\Users\\williamyamashita.gff\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\secrets.py',

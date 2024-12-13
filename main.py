@@ -1,6 +1,6 @@
 import tkinter as tk
 import aux_custom_classes
-from update import update_app
+from update import create_gui
 from screen_rat import ScreenRateado
 from screen_aprovar import ScreenAprovar
 from screen_mov_saldo import ScreenSaldo
@@ -9,7 +9,7 @@ from screen_status import ScreenStatus
 
 class App(tk.Tk):
 
-    update_app()
+    create_gui()
 
     def __init__(self, screen_name="Aprovação de Custos"):
         super().__init__()

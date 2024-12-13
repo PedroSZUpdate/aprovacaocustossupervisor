@@ -5,7 +5,7 @@ import shutil
 
 # Configurações do repositório
 GITHUB_OWNER = "PedroSZUpdate"
-GITHUB_REPO = "aprovacaocustossupervisor"
+GITHUB_REPO = "aprovacaocustogerente"
 BRANCH = "main"
 LOCAL_DIR = "./meu_app"
 GITHUB_API_URL = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/commits/{BRANCH}"
@@ -71,4 +71,3 @@ def update_app():
 
 if __name__ == "__main__":
     update_app()
-
