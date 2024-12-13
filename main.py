@@ -1,6 +1,7 @@
+import time
 import tkinter as tk
 import aux_custom_classes
-from update import create_gui
+import update
 from screen_rat import ScreenRateado
 from screen_aprovar import ScreenAprovar
 from screen_mov_saldo import ScreenSaldo
@@ -9,12 +10,8 @@ from screen_status import ScreenStatus
 
 class App(tk.Tk):
 
-    create_gui()
-
     def __init__(self, screen_name="Aprovação de Custos"):
         super().__init__()
-        # self.title("My Tkinter App")
-        # self.geometry("900x540")
         self.current_frame = None
         self.geometry(f"{900}x540+0+0")
         self.attributes("-topmost", True)
@@ -49,5 +46,7 @@ class App(tk.Tk):
         app.mainloop()
 
 
+interface = update
+interface.create_interface()
 app = App()
 app.mainloop()
