@@ -325,7 +325,7 @@ def get_view_dados():
     df['Mês'] = map_month(df['Stat. Usr.'].apply(extract_month), True)
     df['Mês'] = df['Mês'].replace('N/A', '')
 
-    if user == "williamyamashita.gff" or user == "sagnaldo":
+    if user == "williamyamashita.gff" or user == "sagnaldo" or user == "poliveira.cavelabs":
         pass
     else:
         df = pd.merge(df, df_user, on='Responsável', how='left')
@@ -540,7 +540,7 @@ def get_saldo(tipo, ano):
     # Create DataFrame
     df = get_data_from_query(cursor, query)
 
-    if user == "williamyamashita.gff" or user == "sagnaldo":
+    if user == "williamyamashita.gff" or user == "sagnaldo" or user == "poliveira.cavelabs":
         pass
     else:
         df = pd.merge(df, df_user, on='Responsável', how='left')
@@ -654,7 +654,7 @@ def get_compromissado():
 
     df_info_approv, df_to_sum, df_to_sub = get_approv_info()
 
-    if user == "williamyamashita.gff" or user == "sagnaldo":
+    if user == "williamyamashita.gff" or user == "sagnaldo" or user == "poliveira.cavelabs":
         pass
     else:
         df = pd.merge(df, df_user, on='Responsável', how='left')
@@ -766,7 +766,7 @@ def get_saldo_table():
                        'SALDO_COLEGIADO': "Saldo Disp."
                        }, inplace=True)
 
-    if user == "williamyamashita.gff" or user == "sagnaldo":
+    if user == "williamyamashita.gff" or user == "sagnaldo" or user == "poliveira.cavelabs":
         pass
     else:
         df = pd.merge(df, df_email, on='Responsável', how='left')
@@ -840,7 +840,7 @@ def get_approv_mov_saldo():
                        'VALOR': "Valor Solic."
                        }, inplace=True)
 
-    if user == "williamyamashita.gff" or user == "sagnaldo":
+    if user == "williamyamashita.gff" or user == "sagnaldo" or user == "poliveira.cavelabs":
         pass
     else:
         df = pd.merge(df, df_user, on='Responsável', how='left')
