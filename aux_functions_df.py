@@ -992,3 +992,4 @@ pd.set_option('future.no_silent_downcasting', True)
 df_email = get_email()
 df_user = df_email.drop(columns=['EMAIL_GF', 'EMAIL_GE', 'EMAIL_USUARIO'])
 df_compr = get_compromissado()
+
