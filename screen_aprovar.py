@@ -126,10 +126,9 @@ class ScreenAprovar(tk.Frame):
     def filter_saldo(self, event=None):
 
         # Obtém o texto digitado nos filtros
-        if aux_functions_df.current_month == 11 or aux_functions_df.current_month == 12:
-            filter_ano_text = self.combobox_ano.get()
-            self.tree_orders_to_approve.ano = filter_ano_text
-            self.tree_compr.ano = filter_ano_text
+        filter_ano_text = self.combobox_ano.get()
+        self.tree_orders_to_approve.ano = filter_ano_text
+        self.tree_compr.ano = filter_ano_text
         self.tree_orders_to_approve.uncheck_all()
         self.tree_orders_to_approve.checked_ordens.clear()
         self.tree_orders_to_approve.checked_mes.clear()
@@ -147,8 +146,7 @@ class ScreenAprovar(tk.Frame):
         self.toaprove_entry.config(state="disabled")
 
         # Change Saldo value
-        if aux_functions_df.current_month == 11 or aux_functions_df.current_month == 12:
-            if filter_ano_text == str(aux_functions_df.current_year):
+        if filter_ano_text == str(aux_functions_df.current_year):
                 months = [
                     ('saldo_mes_1', 'jan_entry'),
                     ('saldo_mes_2', 'fev_entry'),
@@ -173,7 +171,7 @@ class ScreenAprovar(tk.Frame):
                     getattr(self, entry).delete(0, tk.END)
                     getattr(self, entry).insert(0, getattr(self, saldo))
                     getattr(self, entry).config(state="disabled")
-            else:
+        else:
                 months = [
                     ('saldo_mes_1_fut', 'jan_entry'),
                     ('saldo_mes_2_fut', 'fev_entry'),
@@ -379,7 +377,7 @@ class ScreenAprovar(tk.Frame):
             8.0,
             anchor="nw",
             text="APROVAÇÃO DE CUSTOS",
-            fill="#FFFFFF",
+            fill="#E0E0E0",
             font=font.Font(family="Suzano Unicase XBold", size=24)
         )
 
@@ -1386,8 +1384,8 @@ class ScreenAprovar(tk.Frame):
         button_go_mov_saldo.pack(pady=5)
         button_go_rat.pack(pady=5)
         button_go_status.pack(pady=5)
-
-        self.filter_saldo()
+        if aux_functions_df.current_month == 11 or aux_functions_df.current_month == 12:
+            self.filter_saldo()
 
     def go_to_screen_mov_saldo(self):
         self.master.show_screen("Movimentações de Saldo")
