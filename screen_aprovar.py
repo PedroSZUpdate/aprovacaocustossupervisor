@@ -126,8 +126,10 @@ class ScreenAprovar(tk.Frame):
     def filter_saldo(self, event=None):
 
         # Obtém o texto digitado nos filtros
-        filter_ano_text = self.combobox_ano.get()
-        self.tree_orders_to_approve.ano = filter_ano_text
+        if aux_functions_df.current_month == 11 or aux_functions_df.current_month == 12:
+            filter_ano_text = self.combobox_ano.get()
+            self.tree_orders_to_approve.ano = filter_ano_text
+            self.tree_compr.ano = filter_ano_text
         self.tree_orders_to_approve.uncheck_all()
         self.tree_orders_to_approve.checked_ordens.clear()
         self.tree_orders_to_approve.checked_mes.clear()
@@ -136,7 +138,6 @@ class ScreenAprovar(tk.Frame):
         self.toaprove_entry.delete("1.0", tk.END)
         self.toaprove_entry.config(state="disabled")
 
-        self.tree_compr.ano = filter_ano_text
         self.tree_compr.uncheck_all()
         self.tree_compr.checked_ordens.clear()
         self.tree_compr.checked_mes.clear()
@@ -146,56 +147,57 @@ class ScreenAprovar(tk.Frame):
         self.toaprove_entry.config(state="disabled")
 
         # Change Saldo value
-        if filter_ano_text == str(aux_functions_df.current_year):
-            months = [
-                ('saldo_mes_1', 'jan_entry'),
-                ('saldo_mes_2', 'fev_entry'),
-                ('saldo_mes_3', 'mar_entry'),
-                ('saldo_mes_4', 'abr_entry'),
-                ('saldo_mes_5', 'mai_entry'),
-                ('saldo_mes_6', 'jun_entry'),
-                ('saldo_mes_7', 'jul_entry'),
-                ('saldo_mes_8', 'ago_entry'),
-                ('saldo_mes_9', 'set_entry'),
-                ('saldo_mes_10', 'out_entry'),
-                ('saldo_mes_11', 'nov_entry'),
-                ('saldo_mes_12', 'dez_entry'),
-                ('saldo_acum_atual', 'acum_mes_entry'),
-                ('saldo_acum_total', 'acum_ano_entry')
-            ]
-            for saldo, entry in months:
-                value = float(getattr(self, saldo).replace('R$', '').replace('.', '').replace(',', '.'))
-                color = "black" if value > 0 else "red"
-                getattr(self, entry).config(disabledforeground=color)
-                getattr(self, entry).config(state="normal")
-                getattr(self, entry).delete(0, tk.END)
-                getattr(self, entry).insert(0, getattr(self, saldo))
-                getattr(self, entry).config(state="disabled")
-        else:
-            months = [
-                ('saldo_mes_1_fut', 'jan_entry'),
-                ('saldo_mes_2_fut', 'fev_entry'),
-                ('saldo_mes_3_fut', 'mar_entry'),
-                ('saldo_mes_4_fut', 'abr_entry'),
-                ('saldo_mes_5_fut', 'mai_entry'),
-                ('saldo_mes_6_fut', 'jun_entry'),
-                ('saldo_mes_7_fut', 'jul_entry'),
-                ('saldo_mes_8_fut', 'ago_entry'),
-                ('saldo_mes_9_fut', 'set_entry'),
-                ('saldo_mes_10_fut', 'out_entry'),
-                ('saldo_mes_11_fut', 'nov_entry'),
-                ('saldo_mes_12_fut', 'dez_entry'),
-                ('saldo_acum_atual_fut', 'acum_mes_entry'),
-                ('saldo_acum_total_fut', 'acum_ano_entry')
-            ]
-            for saldo, entry in months:
-                value = float(getattr(self, saldo).replace('R$', '').replace('.', '').replace(',', '.'))
-                color = "black" if value > 0 else "red"
-                getattr(self, entry).config(disabledforeground=color)
-                getattr(self, entry).config(state="normal")
-                getattr(self, entry).delete(0, tk.END)
-                getattr(self, entry).insert(0, getattr(self, saldo))
-                getattr(self, entry).config(state="disabled")
+        if aux_functions_df.current_month == 11 or aux_functions_df.current_month == 12:
+            if filter_ano_text == str(aux_functions_df.current_year):
+                months = [
+                    ('saldo_mes_1', 'jan_entry'),
+                    ('saldo_mes_2', 'fev_entry'),
+                    ('saldo_mes_3', 'mar_entry'),
+                    ('saldo_mes_4', 'abr_entry'),
+                    ('saldo_mes_5', 'mai_entry'),
+                    ('saldo_mes_6', 'jun_entry'),
+                    ('saldo_mes_7', 'jul_entry'),
+                    ('saldo_mes_8', 'ago_entry'),
+                    ('saldo_mes_9', 'set_entry'),
+                    ('saldo_mes_10', 'out_entry'),
+                    ('saldo_mes_11', 'nov_entry'),
+                    ('saldo_mes_12', 'dez_entry'),
+                    ('saldo_acum_atual', 'acum_mes_entry'),
+                    ('saldo_acum_total', 'acum_ano_entry')
+                ]
+                for saldo, entry in months:
+                    value = float(getattr(self, saldo).replace('R$', '').replace('.', '').replace(',', '.'))
+                    color = "black" if value > 0 else "red"
+                    getattr(self, entry).config(disabledforeground=color)
+                    getattr(self, entry).config(state="normal")
+                    getattr(self, entry).delete(0, tk.END)
+                    getattr(self, entry).insert(0, getattr(self, saldo))
+                    getattr(self, entry).config(state="disabled")
+            else:
+                months = [
+                    ('saldo_mes_1_fut', 'jan_entry'),
+                    ('saldo_mes_2_fut', 'fev_entry'),
+                    ('saldo_mes_3_fut', 'mar_entry'),
+                    ('saldo_mes_4_fut', 'abr_entry'),
+                    ('saldo_mes_5_fut', 'mai_entry'),
+                    ('saldo_mes_6_fut', 'jun_entry'),
+                    ('saldo_mes_7_fut', 'jul_entry'),
+                    ('saldo_mes_8_fut', 'ago_entry'),
+                    ('saldo_mes_9_fut', 'set_entry'),
+                    ('saldo_mes_10_fut', 'out_entry'),
+                    ('saldo_mes_11_fut', 'nov_entry'),
+                    ('saldo_mes_12_fut', 'dez_entry'),
+                    ('saldo_acum_atual_fut', 'acum_mes_entry'),
+                    ('saldo_acum_total_fut', 'acum_ano_entry')
+                ]
+                for saldo, entry in months:
+                    value = float(getattr(self, saldo).replace('R$', '').replace('.', '').replace(',', '.'))
+                    color = "black" if value > 0 else "red"
+                    getattr(self, entry).config(disabledforeground=color)
+                    getattr(self, entry).config(state="normal")
+                    getattr(self, entry).delete(0, tk.END)
+                    getattr(self, entry).insert(0, getattr(self, saldo))
+                    getattr(self, entry).config(state="disabled")
 
     def filter_all(self, event=None):
         entry_widgets = {
